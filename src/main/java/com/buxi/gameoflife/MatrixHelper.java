@@ -1,12 +1,18 @@
 package com.buxi.gameoflife;
 
+import java.io.IOException;
+import java.net.URISyntaxException;
+import java.nio.file.Files;
+import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
+import java.util.stream.IntStream;
+import java.util.stream.Stream;
 
 public class MatrixHelper {
 
-	static void initMatrix(Matrix matrix) {
+	static void initMatrixRandom(Matrix matrix) {
 		Random rand = new Random();
 		for (int i = 0; i < matrix.getMatrixSizeX(); i++) {
 			for (int j = 0; j < matrix.getMatrixSizeY(); j++) {
@@ -132,4 +138,28 @@ public class MatrixHelper {
 			}
 		}
 	}
+
+	public static void loadPatternIntoMatrix(Matrix matrix, String fileName) throws URISyntaxException {
+		try (Stream<String> stream = Files.lines(Paths.get(ClassLoader.getSystemResource(fileName).toURI()))) {
+			Object[] lines = stream.toArray();
+			IntStream.range(0, lines.length).forEach(idx -> MatrixHelper.fillMatrix(matrix, idx, lines[idx]));
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+	}
+
+	public static void fillMatrix(Matrix matrix, int i, Object lines) {
+		byte[] bytes = ((String) lines).getBytes();
+		IntStream.range(0, bytes.length).forEach(idx -> MatrixHelper.fillMatrixBytes(matrix, i, idx, bytes[idx]));
+	}
+
+	public static void fillMatrixBytes(Matrix matrix, int i, int j, byte b) {
+		matrix.getMatrix()[matrix.getMatrixSizeX() / 2 + j][matrix.getMatrixSizeY() / 2 + i] = (byte) (b == 48 ? 0 : 1);
+		System.out.println(i + "-" + j + ":" + b);
+	}
+
+	public static void initWithPattern(Matrix matrix, String fileName) throws URISyntaxException {
+		MatrixHelper.loadPatternIntoMatrix(matrix, fileName);
+	}
+
 }

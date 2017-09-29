@@ -3,6 +3,8 @@
  */
 package com.buxi.gameoflife;
 
+import java.util.Arrays;
+
 /**
  * @author buxi
  *
@@ -48,6 +50,13 @@ public class Matrix {
 
 	public void setMatrix(byte[][] matrix) {
 		this.matrix = matrix;
+	}
+
+	@Override
+	public String toString() {
+		return "Matrix [matrixSizeX=" + matrixSizeX + ", matrixSizeY=" + matrixSizeY + ", matrix="
+				+ Arrays.toString(matrix) + "]";
+
 	}
 
 }

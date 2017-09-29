@@ -184,4 +184,5 @@ public class MatrixHelperTest {
 		assertEquals(0, MatrixHelper.getNewCellValue((byte) 0, 8));
 
 	}
+
 }

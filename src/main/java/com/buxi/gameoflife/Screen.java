@@ -33,17 +33,17 @@ public class Screen extends JFrame {
 
 		Graphics2D graphics = (Graphics2D) g;
 		graphics.setRenderingHint(RenderingHints.KEY_TEXT_ANTIALIASING, RenderingHints.VALUE_TEXT_ANTIALIAS_ON);
-
+		int i = 0;
 		while (true) {
 			showMatrix(graphics);
 
 			try {
-				Thread.sleep(100);
+				Thread.sleep(200);
 			} catch (InterruptedException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
-
+			System.out.println(i++);
 			matrix = MatrixHelper.recalculateMatrix(matrix);
 		}
 	}
