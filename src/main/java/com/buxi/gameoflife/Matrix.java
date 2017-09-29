@@ -11,13 +11,19 @@ public class Matrix {
 	private int matrixSizeX;
 	private int matrixSizeY;
 
-	private int matrix[][];
+	private byte matrix[][];
 
 	public Matrix(int matrixSizeX, int matrixSizeY) {
 		super();
 		this.matrixSizeX = matrixSizeX;
 		this.matrixSizeY = matrixSizeY;
-		matrix = new int[matrixSizeX][matrixSizeY];
+		matrix = new byte[matrixSizeX][matrixSizeY];
+	}
+
+	public Matrix(byte[][] matrix) {
+		this.matrixSizeX = matrix.length;
+		this.matrixSizeY = matrix[0].length;
+		this.matrix = matrix;
 	}
 
 	public int getMatrixSizeX() {
@@ -36,11 +42,11 @@ public class Matrix {
 		this.matrixSizeY = matrixSizeY;
 	}
 
-	public int[][] getMatrix() {
+	public byte[][] getMatrix() {
 		return matrix;
 	}
 
-	public void setMatrix(int[][] matrix) {
+	public void setMatrix(byte[][] matrix) {
 		this.matrix = matrix;
 	}
 

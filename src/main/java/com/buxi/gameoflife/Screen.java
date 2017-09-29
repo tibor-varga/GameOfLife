@@ -4,7 +4,6 @@
 package com.buxi.gameoflife;
 
 import java.awt.Color;
-import java.awt.Font;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
 import java.awt.HeadlessException;
@@ -31,7 +30,6 @@ public class Screen extends JFrame {
 	@Override
 	public void paint(Graphics g) {
 		super.paint(g);
-		g.setFont(new Font("SansSerif", Font.BOLD, 24));
 
 		Graphics2D graphics = (Graphics2D) g;
 		graphics.setRenderingHint(RenderingHints.KEY_TEXT_ANTIALIASING, RenderingHints.VALUE_TEXT_ANTIALIAS_ON);
@@ -65,6 +63,8 @@ public class Screen extends JFrame {
 			for (int j = 0; j < matrix.getMatrixSizeY(); j++) {
 				if (matrix.getMatrix()[i][j] == 0) {
 					hideRectXY(i, j, graphics);
+				} else {
+					showRectXY(i, j, graphics);
 				}
 			}
 		}

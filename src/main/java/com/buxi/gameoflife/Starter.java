@@ -16,11 +16,11 @@ public class Starter {
 	 */
 	public static void main(String[] args) {
 
-		Matrix matrix = new Matrix(10, 10);
+		Matrix matrix = new Matrix(100, 100);
 		MatrixHelper.initMatrix(matrix);
 
-		Screen frame = new Screen(10, 10, matrix);
-		frame.setSize(200, 300);
+		Screen frame = new Screen(5, 5, matrix);
+		frame.setSize(600, 600);
 		frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
 		frame.setVisible(true);
 	}
