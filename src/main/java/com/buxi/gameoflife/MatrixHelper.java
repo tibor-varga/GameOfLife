@@ -139,27 +139,31 @@ public class MatrixHelper {
 		}
 	}
 
-	public static void loadPatternIntoMatrix(Matrix matrix, String fileName) throws URISyntaxException {
+	public static void loadPatternIntoMatrix(Matrix matrix, String fileName, Coordinate startCoordinate)
+			throws URISyntaxException {
 		try (Stream<String> stream = Files.lines(Paths.get(ClassLoader.getSystemResource(fileName).toURI()))) {
 			Object[] lines = stream.toArray();
-			IntStream.range(0, lines.length).forEach(idx -> MatrixHelper.fillMatrix(matrix, idx, lines[idx]));
+			IntStream.range(0, lines.length)
+					.forEach(idx -> MatrixHelper.fillMatrix(matrix, startCoordinate, idx, lines[idx]));
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
 	}
 
-	public static void fillMatrix(Matrix matrix, int i, Object lines) {
+	public static void fillMatrix(Matrix matrix, Coordinate startCoordinate, int i, Object lines) {
 		byte[] bytes = ((String) lines).getBytes();
-		IntStream.range(0, bytes.length).forEach(idx -> MatrixHelper.fillMatrixBytes(matrix, i, idx, bytes[idx]));
+		IntStream.range(0, bytes.length)
+				.forEach(idx -> MatrixHelper.fillMatrixBytes(matrix, startCoordinate, i, idx, bytes[idx]));
 	}
 
-	public static void fillMatrixBytes(Matrix matrix, int i, int j, byte b) {
-		matrix.getMatrix()[matrix.getMatrixSizeX() / 2 + j][matrix.getMatrixSizeY() / 2 + i] = (byte) (b == 48 ? 0 : 1);
+	public static void fillMatrixBytes(Matrix matrix, Coordinate startCoordinate, int i, int j, byte b) {
+		matrix.getMatrix()[startCoordinate.x + j][startCoordinate.y + i] = (byte) (b == 48 ? 0 : 1);
 		System.out.println(i + "-" + j + ":" + b);
 	}
 
-	public static void initWithPattern(Matrix matrix, String fileName) throws URISyntaxException {
-		MatrixHelper.loadPatternIntoMatrix(matrix, fileName);
+	public static void initWithPattern(Matrix matrix, String fileName, Coordinate startCoordinate)
+			throws URISyntaxException {
+		MatrixHelper.loadPatternIntoMatrix(matrix, fileName, startCoordinate);
 	}
 
 }

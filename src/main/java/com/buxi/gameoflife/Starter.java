@@ -21,10 +21,11 @@ public class Starter {
 
 		Matrix matrix = new Matrix(200, 200);
 		// MatrixHelper.initMatrixRandom(matrix);
-		// MatrixHelper.initWithAcorn(matrix,"acorn.dat");
-		// MatrixHelper.initWithDieHard(matrix,"diehard.dat");
-		// MatrixHelper.initWithRPentomino(matrix,"r-pentomino.dat");
-		MatrixHelper.initWithPattern(matrix, "pentadecathlon.dat");
+		// MatrixHelper.initWithAcorn(matrix,"acorn.dat", new Coordinate(100, 100));
+		// MatrixHelper.initWithDieHard(matrix,"diehard.dat", new Coordinate(100, 100));
+		// MatrixHelper.initWithRPentomino(matrix,"r-pentomino.dat", new Coordinate(100,
+		// 100));
+		MatrixHelper.initWithPattern(matrix, "pentadecathlon.dat", new Coordinate(100, 100));
 		Screen frame = new Screen(5, 5, matrix);
 		frame.setSize(1700, 700);
 		frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
