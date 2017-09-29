@@ -37,12 +37,12 @@ public class Screen extends JFrame {
 		while (true) {
 			showMatrix(graphics);
 
-			try {
-				Thread.sleep(2000);
-			} catch (InterruptedException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
+			// try {
+			// Thread.sleep(2000);
+			// } catch (InterruptedException e) {
+			// // TODO Auto-generated catch block
+			// e.printStackTrace();
+			// }
 
 			matrix = MatrixHelper.recalculateMatrix(matrix);
 		}
