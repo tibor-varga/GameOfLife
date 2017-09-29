@@ -25,7 +25,14 @@ public class Starter {
 		// MatrixHelper.initWithDieHard(matrix,"diehard.dat", new Coordinate(100, 100));
 		// MatrixHelper.initWithRPentomino(matrix,"r-pentomino.dat", new Coordinate(100,
 		// 100));
-		MatrixHelper.initWithPattern(matrix, "pentadecathlon.dat", new Coordinate(100, 100));
+		// MatrixHelper.initWithPattern(matrix, "pentadecathlon.dat", new
+		// Coordinate(100, 100));
+		// MatrixHelper.initWithPattern(matrix, "gun1.dat", new Coordinate(100, 100));
+		// MatrixHelper.initWithPattern(matrix, "first_gun.dat", new Coordinate(100,
+		// 100));
+		// MatrixHelper.initWithPattern(matrix, "endup_in_pulsar.dat", new
+		// Coordinate(100, 100));
+		MatrixHelper.initWithPattern(matrix, "interessant.dat", new Coordinate(100, 100));
 		Screen frame = new Screen(5, 5, matrix);
 		frame.setSize(1700, 700);
 		frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
