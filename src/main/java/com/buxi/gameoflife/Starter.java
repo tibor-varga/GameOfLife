@@ -35,15 +35,53 @@ public class Starter {
 		// MatrixHelper.initWithPattern(matrix, "interessant.dat", new Coordinate(100,
 		// 100));
 		// MatrixHelper.initWithPattern(matrix, "own.dat", new Coordinate(100, 100));
-		killPulsar(matrix);
+		supernova(matrix);
 		Screen frame = new Screen(5, 5, matrix);
 		frame.setSize(1700, 700);
 		frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
 		frame.setVisible(true);
 	}
 
-	public static void killPulsar(Matrix matrix) throws URISyntaxException {
+	public static void supernova(Matrix matrix) throws URISyntaxException {
+		MatrixHelper.initWithPattern(matrix, "pentadecathlon.dat", new Coordinate(80, 90));
+		MatrixHelper.initWithPattern(matrix, "gun2.dat", new Coordinate(33, 41));
+		MatrixHelper.initWithPattern(matrix, "gun2.dat", new Coordinate(15, 10));
+		MatrixHelper.initWithPattern(matrix, "gun3.dat", new Coordinate(185, 15));
+	}
+
+	public static void killPulsarWithFirework(Matrix matrix) throws URISyntaxException {
+		MatrixHelper.initWithPattern(matrix, "pentadecathlon.dat", new Coordinate(80, 90));
+		MatrixHelper.initWithPattern(matrix, "gun2.dat", new Coordinate(35, 45));
+	}
+
+	public static void killPulsar7(Matrix matrix) throws URISyntaxException {
+		MatrixHelper.initWithPattern(matrix, "pentadecathlon.dat", new Coordinate(80, 90));
+		MatrixHelper.initWithPattern(matrix, "gun2.dat", new Coordinate(35, 55));
+	}
+
+	public static void explodePulsar6(Matrix matrix) throws URISyntaxException {
+		MatrixHelper.initWithPattern(matrix, "pentadecathlon.dat", new Coordinate(80, 90));
+		MatrixHelper.initWithPattern(matrix, "gun2.dat", new Coordinate(40, 55));
+	}
+
+	public static void killPulsar5(Matrix matrix) throws URISyntaxException {
+		MatrixHelper.initWithPattern(matrix, "pentadecathlon.dat", new Coordinate(80, 90));
+		MatrixHelper.initWithPattern(matrix, "gun2.dat", new Coordinate(50, 65));
+	}
+
+	public static void killPulsar4(Matrix matrix) throws URISyntaxException {
+		MatrixHelper.initWithPattern(matrix, "pentadecathlon.dat", new Coordinate(80, 90));
+		MatrixHelper.initWithPattern(matrix, "gun2.dat", new Coordinate(60, 85));
+	}
+
+	public static void killPulsar2(Matrix matrix) throws URISyntaxException {
+		MatrixHelper.initWithPattern(matrix, "pentadecathlon.dat", new Coordinate(80, 90));
+		MatrixHelper.initWithPattern(matrix, "gun2.dat", new Coordinate(70, 90));
+	}
+
+	public static void killPulsar3(Matrix matrix) throws URISyntaxException {
 		MatrixHelper.initWithPattern(matrix, "pentadecathlon.dat", new Coordinate(80, 90));
 		MatrixHelper.initWithPattern(matrix, "gun2.dat", new Coordinate(70, 85));
 	}
+
 }
