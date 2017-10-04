@@ -4,7 +4,7 @@ import java.net.URISyntaxException;
 
 import org.junit.Test;
 
-public class LoadFileTest {
+public class LoadFileIT {
 
 	@Test
 	public void testMatrixConstructor() throws URISyntaxException {
