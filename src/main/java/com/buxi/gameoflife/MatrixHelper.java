@@ -161,7 +161,6 @@ public class MatrixHelper {
 
 	public static void fillMatrixBytes(Matrix matrix, Coordinate startCoordinate, int i, int j, byte b) {
 		matrix.getMatrix()[startCoordinate.x + j][startCoordinate.y + i] = (byte) (b == 48 ? 0 : 1);
-		System.out.println(i + "-" + j + ":" + b);
 	}
 
 	public static void initWithPattern(Matrix matrix, String fileName, Coordinate startCoordinate)
