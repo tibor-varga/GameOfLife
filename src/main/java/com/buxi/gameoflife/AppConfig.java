@@ -22,19 +22,19 @@ public class AppConfig {
 	private int matrixSizeY;
 	private int pixelSizeX;
 	private int pixelSizeY;
-	private String initPattern;
-	private int initPattenCoordX;
-	private int initPattenCoordY;
+	private String initScene;
+	private int defaultPatternCoordX;
+	private int defaultPatternCoordY;
 
 	@Bean
-	public Matrix createMatrix() {
-		return new Matrix(matrixSizeX, matrixSizeY);
+	public Matrix createMatrix() throws URISyntaxException {
+		return InitMatrixFactory.createInitMatrix(matrixSizeX, matrixSizeY,
+				new Coordinate(defaultPatternCoordX, defaultPatternCoordY), initScene);
 	}
 
 	@Bean("screen")
 	public Screen createScreen() throws URISyntaxException {
 		Screen screen = new Screen(pixelSizeX, pixelSizeY, createMatrix());
-		screen.initWithPattern(initPattern, initPattenCoordX, initPattenCoordY);
 		screen.setSize(matrixSizeX * pixelSizeX, matrixSizeY * pixelSizeY);
 		screen.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
 		return screen;
@@ -72,28 +72,28 @@ public class AppConfig {
 		this.pixelSizeY = pixelSizeY;
 	}
 
-	public String getInitPattern() {
-		return initPattern;
+	public String getInitScene() {
+		return initScene;
 	}
 
-	public void setInitPattern(String initPattern) {
-		this.initPattern = initPattern;
+	public void setInitScene(String initScene) {
+		this.initScene = initScene;
 	}
 
-	public int getInitPattenCoordX() {
-		return initPattenCoordX;
+	public int getDefaultPatternCoordX() {
+		return defaultPatternCoordX;
 	}
 
-	public void setInitPattenCoordX(int initPattenCoordX) {
-		this.initPattenCoordX = initPattenCoordX;
+	public void setDefaultPatternCoordX(int defaultPatternCoordX) {
+		this.defaultPatternCoordX = defaultPatternCoordX;
 	}
 
-	public int getInitPattenCoordY() {
-		return initPattenCoordY;
+	public int getDefaultPatternCoordY() {
+		return defaultPatternCoordY;
 	}
 
-	public void setInitPattenCoordY(int initPattenCoordY) {
-		this.initPattenCoordY = initPattenCoordY;
+	public void setDefaultPatternCoordY(int defaultPatternCoordY) {
+		this.defaultPatternCoordY = defaultPatternCoordY;
 	}
 
 }

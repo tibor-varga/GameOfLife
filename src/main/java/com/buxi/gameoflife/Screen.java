@@ -8,7 +8,6 @@ import java.awt.Graphics;
 import java.awt.Graphics2D;
 import java.awt.HeadlessException;
 import java.awt.RenderingHints;
-import java.net.URISyntaxException;
 
 import javax.swing.JFrame;
 
@@ -70,10 +69,5 @@ public class Screen extends JFrame {
 			}
 		}
 
-	}
-
-	public void initWithPattern(String initPattern, int initPattenCoordX, int initPattenCoordY)
-			throws URISyntaxException {
-		MatrixHelper.initWithPattern(matrix, initPattern, new Coordinate(initPattenCoordX, initPattenCoordY));
 	}
 }
