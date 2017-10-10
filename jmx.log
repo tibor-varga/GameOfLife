@@ -1,0 +1,3 @@
+LogMsg: Tue Oct 10 15:21:03 CEST 2017 jmx.attribute.change AttributeChangeDetected Name = ThreadSleepInMillis Old value = 0 New value = 100
+LogMsg: Tue Oct 10 15:38:42 CEST 2017 jmx.attribute.change AttributeChangeDetected Name = ThreadSleepInMillis Old value = 100 New value = 0
+LogMsg: Tue Oct 10 15:38:52 CEST 2017 jmx.attribute.change AttributeChangeDetected Name = ThreadSleepInMillis Old value = 0 New value = 100

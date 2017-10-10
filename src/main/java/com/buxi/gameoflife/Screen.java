@@ -11,6 +11,9 @@ import java.awt.RenderingHints;
 
 import javax.swing.JFrame;
 
+import org.springframework.beans.factory.annotation.Autowired;
+
+import com.buxi.gameoflife.jmx.IConfigJmxBean;
 import com.buxi.gameoflife.model.Matrix;
 
 /**
@@ -22,6 +25,9 @@ public class Screen extends JFrame {
 	private int pixelSizeY;
 	private Matrix matrix;
 
+	@Autowired
+	private IConfigJmxBean configBean;
+
 	public Screen(int pixelSizeX, int pixelSizeY, Matrix matrix) throws HeadlessException {
 		super();
 		this.pixelSizeX = pixelSizeX;
@@ -32,14 +38,14 @@ public class Screen extends JFrame {
 	@Override
 	public void paint(Graphics g) {
 		super.paint(g);
-
+		// System.out.println("sleep:" + configBean.getThreadSleepInMillis());
 		Graphics2D graphics = (Graphics2D) g;
 		graphics.setRenderingHint(RenderingHints.KEY_TEXT_ANTIALIASING, RenderingHints.VALUE_TEXT_ANTIALIAS_ON);
 		while (true) {
 			showMatrix(graphics);
 
 			try {
-				Thread.sleep(0);
+				Thread.sleep(configBean.getThreadSleepInMillis());
 			} catch (InterruptedException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
@@ -69,5 +75,13 @@ public class Screen extends JFrame {
 			}
 		}
 
+	}
+
+	public IConfigJmxBean getConfigBean() {
+		return configBean;
+	}
+
+	public void setConfigBean(IConfigJmxBean configBean) {
+		this.configBean = configBean;
 	}
 }
