@@ -11,6 +11,8 @@ import java.awt.RenderingHints;
 
 import javax.swing.JFrame;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import com.buxi.gameoflife.jmx.IConfigJmxBean;
@@ -21,6 +23,8 @@ import com.buxi.gameoflife.model.Matrix;
  *
  */
 public class Screen extends JFrame {
+	private final Logger LOGGER = LoggerFactory.getLogger(this.getClass());
+
 	private int pixelSizeX;
 	private int pixelSizeY;
 	private Matrix matrix;
@@ -38,7 +42,7 @@ public class Screen extends JFrame {
 	@Override
 	public void paint(Graphics g) {
 		super.paint(g);
-		// System.out.println("sleep:" + configBean.getThreadSleepInMillis());
+		LOGGER.info("sleep value:{}", configBean.getThreadSleepInMillis());
 		Graphics2D graphics = (Graphics2D) g;
 		graphics.setRenderingHint(RenderingHints.KEY_TEXT_ANTIALIASING, RenderingHints.VALUE_TEXT_ANTIALIAS_ON);
 		while (true) {
