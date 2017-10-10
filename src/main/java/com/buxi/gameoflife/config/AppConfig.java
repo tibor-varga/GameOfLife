@@ -1,7 +1,7 @@
 /**
  * 
  */
-package com.buxi.gameoflife;
+package com.buxi.gameoflife.config;
 
 import java.net.URISyntaxException;
 
@@ -10,6 +10,11 @@ import javax.swing.WindowConstants;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+
+import com.buxi.gameoflife.MatrixInitializerFactory;
+import com.buxi.gameoflife.Screen;
+import com.buxi.gameoflife.model.Coordinate;
+import com.buxi.gameoflife.model.Matrix;
 
 /**
  * @author buxi
@@ -28,7 +33,7 @@ public class AppConfig {
 
 	@Bean
 	public Matrix createMatrix() throws URISyntaxException {
-		return InitMatrixFactory.createInitMatrix(matrixSizeX, matrixSizeY,
+		return MatrixInitializerFactory.createInitMatrix(matrixSizeX, matrixSizeY,
 				new Coordinate(defaultPatternCoordX, defaultPatternCoordY), initScene);
 	}
 

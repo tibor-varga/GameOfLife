@@ -8,6 +8,8 @@ import java.util.List;
 
 import org.junit.Test;
 
+import com.buxi.gameoflife.model.Coordinate;
+
 public class MatrixHelperTest {
 
 	@Test

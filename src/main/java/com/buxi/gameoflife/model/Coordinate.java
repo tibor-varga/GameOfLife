@@ -1,15 +1,15 @@
 /**
  * 
  */
-package com.buxi.gameoflife;
+package com.buxi.gameoflife.model;
 
 /**
  * @author buxi
  *
  */
 public class Coordinate {
-	int x;
-	int y;
+	public int x;
+	public int y;
 
 	public Coordinate(int x, int y) {
 		super();

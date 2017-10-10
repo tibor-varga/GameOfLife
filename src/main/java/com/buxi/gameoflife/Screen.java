@@ -11,6 +11,8 @@ import java.awt.RenderingHints;
 
 import javax.swing.JFrame;
 
+import com.buxi.gameoflife.model.Matrix;
+
 /**
  * @author buxi
  *

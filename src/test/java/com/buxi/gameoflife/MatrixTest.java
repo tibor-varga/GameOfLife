@@ -4,6 +4,8 @@ import static org.junit.Assert.assertEquals;
 
 import org.junit.Test;
 
+import com.buxi.gameoflife.model.Matrix;
+
 public class MatrixTest {
 
 	@Test

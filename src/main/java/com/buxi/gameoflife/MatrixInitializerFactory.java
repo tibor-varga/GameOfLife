@@ -2,7 +2,10 @@ package com.buxi.gameoflife;
 
 import java.net.URISyntaxException;
 
-public class InitMatrixFactory {
+import com.buxi.gameoflife.model.Coordinate;
+import com.buxi.gameoflife.model.Matrix;
+
+public class MatrixInitializerFactory {
 
 	public static Matrix createInitMatrix(int matrixSizeX, int matrixSizeY, Coordinate defaultCoord, String scene)
 			throws URISyntaxException {

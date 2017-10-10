@@ -4,6 +4,9 @@ import java.net.URISyntaxException;
 
 import org.junit.Test;
 
+import com.buxi.gameoflife.model.Coordinate;
+import com.buxi.gameoflife.model.Matrix;
+
 public class LoadFileIT {
 
 	@Test

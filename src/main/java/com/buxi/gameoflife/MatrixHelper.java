@@ -10,6 +10,9 @@ import java.util.Random;
 import java.util.stream.IntStream;
 import java.util.stream.Stream;
 
+import com.buxi.gameoflife.model.Coordinate;
+import com.buxi.gameoflife.model.Matrix;
+
 public class MatrixHelper {
 
 	static void initMatrixRandom(Matrix matrix) {

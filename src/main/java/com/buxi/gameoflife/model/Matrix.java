@@ -1,7 +1,7 @@
 /**
  * 
  */
-package com.buxi.gameoflife;
+package com.buxi.gameoflife.model;
 
 import java.util.Arrays;
 
