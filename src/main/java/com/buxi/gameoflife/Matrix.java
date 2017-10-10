@@ -9,6 +9,7 @@ import java.util.Arrays;
  * @author buxi
  *
  */
+
 public class Matrix {
 	private int matrixSizeX;
 	private int matrixSizeY;

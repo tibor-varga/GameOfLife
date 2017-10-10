@@ -3,14 +3,18 @@
  */
 package com.buxi.gameoflife;
 
+import java.awt.EventQueue;
 import java.net.URISyntaxException;
 
-import javax.swing.WindowConstants;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.builder.SpringApplicationBuilder;
+import org.springframework.context.ConfigurableApplicationContext;
 
 /**
  * @author buxi
  *
  */
+@SpringBootApplication
 public class Starter {
 
 	/**
@@ -18,8 +22,13 @@ public class Starter {
 	 * @throws URISyntaxException
 	 */
 	public static void main(String[] args) throws URISyntaxException {
+		ConfigurableApplicationContext context = new SpringApplicationBuilder(Starter.class).headless(false).run(args);
+		EventQueue.invokeLater(() -> {
+			Screen screen = (Screen) context.getBean("screen");
+			screen.setVisible(true);
+		});
 
-		Matrix matrix = new Matrix(200, 200);
+		// Matrix matrix = new Matrix(200, 200);
 		// MatrixHelper.initMatrixRandom(matrix);
 		// MatrixHelper.initWithPattern(matrix, "acorn.dat", new Coordinate(100, 100));
 		// MatrixHelper.initWithPattern(matrix, "diehard.dat", new Coordinate(100,
@@ -36,12 +45,12 @@ public class Starter {
 		// MatrixHelper.initWithPattern(matrix, "interessant.dat", new Coordinate(100,
 		// 100));
 		// MatrixHelper.initWithPattern(matrix, "own.dat", new Coordinate(100, 100));
-		supernova(matrix);
+		// supernova(matrix);
 		// killPulsarWithFirework(matrix);
-		Screen frame = new Screen(5, 5, matrix);
-		frame.setSize(1700, 700);
-		frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
-		frame.setVisible(true);
+		// Screen frame = new Screen(5, 5, matrix);
+		// frame.setSize(1700, 700);
+		// frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
+		// frame.setVisible(true);
 	}
 
 	public static void supernova(Matrix matrix) throws URISyntaxException {
